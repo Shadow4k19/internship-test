@@ -23,7 +23,9 @@ const Register = () => {
 
   const handleSubmit = async () => {
     if (username && password && personalinfo) {
-      const response = await fetch("http://127.0.0.1:8000/api/person/", {
+      alert("Create Sucessful");
+      window.location.href = "/";
+      /*const response = await fetch("http://127.0.0.1:8000/api/person/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +39,7 @@ const Register = () => {
       } else {
         console.log(responseData.error);
         alert(responseData.error);
-      }
+      }*/
     } else {
       alert("info is null");
     }

@@ -4,16 +4,16 @@ import "./Info.css";
 
 const Info = () => {
   const [personalinfo, setPersonalinfo] = useState({
-    name: "",
-    surname: "",
-    date_of_birth: "",
-    religion: "",
-    tel: "",
-    gender: "",
-    address: "",
+    name: "Anuthep",
+    surname: "Kumseam",
+    date_of_birth: "2003-01-02",
+    religion: "Buddhism",
+    tel: "0963747949",
+    gender: "Male",
+    address: "33/4 Bangmaenang Bangyai Nonthaburi 11140",
   });
   const username = User.getUsername();
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchData = async () => {
       try {
         const url = `http://127.0.0.1:8000/api/person/?username=${username}`;
@@ -58,7 +58,7 @@ const Info = () => {
     };
 
     fetchData();
-  }, [username]);
+  }, [username]);*/
 
   const renderPersonalInfo = () => {
     return Object.entries(personalinfo).map(([key, value]) => (

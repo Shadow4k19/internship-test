@@ -3,19 +3,19 @@ import User from "../Class/User";
 import "./Register.css";
 
 const Edit = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("Test");
+  const [password, setPassword] = useState("Test1234");
   const [personalinfo, setPersonalinfo] = useState({
-    name: "",
-    surname: "",
-    date_of_birth: "",
-    religion: "",
-    tel: "",
-    address: "",
-    gender: "",
+    name: "Anuthep",
+    surname: "Kumseam",
+    date_of_birth: "2003-01-02",
+    religion: "Buddhism",
+    tel: "0963747949",
+    address: "33/4 Bangmaenang Bangyai Nonthaburi 11140",
+    gender: "Male",
   });
   const user = User.getUsername();
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchData = async () => {
       try {
         const url = `http://127.0.0.1:8000/api/person/?username=${user}`;
@@ -46,7 +46,7 @@ const Edit = () => {
     };
 
     fetchData();
-  }, [user]);
+  }, [user]);*/
 
   const handleChange = (field, value) => {
     setPersonalinfo((prevInfo) => ({
@@ -56,7 +56,9 @@ const Edit = () => {
   };
 
   const handleSave = async () => {
-    console.log(personalinfo);
+    alert("Save sucessful");
+    window.location.href = "/info";
+    /*console.log(personalinfo);
     try {
       const response = await fetch("http://127.0.0.1:8000/api/person/", {
         method: "PUT",
@@ -77,7 +79,7 @@ const Edit = () => {
       }
     } catch (error) {
       console.error("Error during data update:", error);
-    }
+    }*/
   };
 
   return (

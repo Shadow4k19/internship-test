@@ -6,8 +6,18 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  const [Testdata, setTest] = useState({
+    username: "Test",
+    password: "Test1234",
+  });
   const handleLogin = async () => {
+    if (username == Testdata.username && password == Testdata.password) {
+      alert("Login sucessful");
+      window.location.href = "/info";
+    } else {
+      alert("Login failed");
+    }
+    /*
     try {
       const response = await fetch("http://127.0.0.1:8000/api/login/", {
         method: "POST",
@@ -30,7 +40,7 @@ const Login = () => {
     } catch (error) {
       console.error("Error during login:", error);
       setError(error);
-    }
+    }*/
   };
   return (
     <div className="container-login">
